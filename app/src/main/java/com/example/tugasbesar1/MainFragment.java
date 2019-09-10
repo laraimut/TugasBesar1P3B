@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.tugasbesar1;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -14,7 +14,7 @@ import com.example.tugasbesar1.R;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
     protected Button btnAdd, btnRes, btnClear, btnSave;
-    protected com.example.calculator.FragmentListener listener;
+    protected FragmentListener listener;
     protected TextView output;
 
     public static MainFragment newInstance(String value){
