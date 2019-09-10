@@ -1,16 +1,21 @@
 package com.example.tugasbesar1;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
-import com.example.tugasbesar1.R;
+import androidx.fragment.app.DialogFragment;
 
 
-public class ResultFragment extends androidx.fragment.app.DialogFragment {
+public class ResultFragment extends DialogFragment implements View.OnClickListener {
     private TextView result;
+    protected Button btn;
+    protected FragmentListener listener;
+
 
     public static ResultFragment newInstance(String text){
         ResultFragment fragment = new ResultFragment();
@@ -24,8 +29,25 @@ public class ResultFragment extends androidx.fragment.app.DialogFragment {
         View view = inflater.inflate(R.layout.resultfragment,container,false);
         this.result = view.findViewById(R.id.tvResult);
         this.result.setText(this.getArguments().getString("result" ,""));
+        this.btn=view.findViewById(R.id.button_id);
+        this.btn.setOnClickListener(this);
+
         return view;
     }
 
 
+    @Override
+    public void onClick(View view) {
+        if(view.getId()==this.btn.getId()){
+            this.listener.changePage(4);
+        }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if(context instanceof FragmentListener){
+            this.listener=(FragmentListener) context;
+        }
+    }
 }

@@ -39,12 +39,29 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.fragmentManager=this.getSupportFragmentManager();
 
         FragmentTransaction ft=this.fragmentManager.beginTransaction();
-        ft.add(R.id.fragment_container, mainFragment).commit();
+        ft.add(R.id.fragment_container, mainFragment);
+        ft.add(R.id.fragment_container, addFragment);
+        ft.show(mainFragment);
+        ft.hide(addFragment);
+        ft.commit();
     }
 
     @Override
     public void changePage(int page) {
-
+        FragmentTransaction ft = this.fragmentManager.beginTransaction() ;
+        if (page==1) {
+            ft.show(addFragment);
+            ft.hide(mainFragment);
+        }else if(page==2){
+            ft.hide(addFragment);
+            ft.show(mainFragment);
+        }else if(page==3){
+            this.resultFragment=ResultFragment.newInstance("");
+            this.resultFragment.show(this.getSupportFragmentManager(),"dialog");
+        }else if(page==4){
+            this.resultFragment.dismiss();
+        }
+        ft.commit() ;
     }
 
     @Override
