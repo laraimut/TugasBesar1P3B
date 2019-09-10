@@ -1,4 +1,4 @@
-package com.example.calculator;
+package com.example.tugasbesar1;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -15,7 +15,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
 
     protected Button btnSubmit;
     protected EditText inputOperand;
-    protected com.example.calculator.FragmentListener listener;
+    protected com.example.tugasbesar1.FragmentListener listener;
 
     public static AddFragment newInstance(String value){
         AddFragment addFragment = new AddFragment();
