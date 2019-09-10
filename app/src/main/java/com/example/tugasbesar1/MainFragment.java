@@ -1,5 +1,6 @@
 package com.example.tugasbesar1;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -37,11 +38,16 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         this.btnAdd=view.findViewById(R.id.btn_Add);
         this.btnClear=view.findViewById(R.id.btn_Clear);
         this.btnAdd.setOnClickListener(this);
+
+        this.btnRes=view.findViewById(R.id.btn_Res);
+        this.btnRes.setOnClickListener(this);
+
         this.exampleList = view.findViewById(R.id.listview);
         this.exampleAdapter = new AdapterList(getActivity());
         this.angka = new Angka("+","20");
         this.exampleAdapter.add(angka);
         this.exampleList.setAdapter(this.exampleAdapter);
+
         return view;
     }
     @Override
@@ -49,14 +55,24 @@ public class MainFragment extends Fragment implements View.OnClickListener {
        if(view.getId()==this.btnAdd.getId())
        {
            Log.d("debug", "onClick: ");
-           this.listener.changePage(2);
+           this.listener.changePage(1);
        }
-       if(view.getId()==this.btnClear.getId())
+       if(view.getId()==this.btnRes.getId())
        {
            Log.d("debug", "onClick: CLEAR");
+           this.listener.changePage(3);
        }
 
     }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if(context instanceof FragmentListener){
+            this.listener = (FragmentListener) context;
+        }
+    }
+
     public void setText(String str)
     {
         this.output.setText(str);

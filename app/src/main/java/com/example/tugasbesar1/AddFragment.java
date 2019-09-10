@@ -1,5 +1,6 @@
 package com.example.tugasbesar1;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,6 +16,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
 
     protected Button btnSubmit;
     protected EditText inputOperand;
+    protected FragmentListener listener;
 
     protected com.example.tugasbesar1.FragmentListener listener;
 
@@ -33,16 +35,28 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         this.btnSubmit= view.findViewById(R.id.btn_Submit);
         this.inputOperand= view.findViewById((R.id.operand));
         this.btnSubmit.setOnClickListener(this);
+
         return view;
     }
     @Override
     public void onClick(View view) {
-//        if(view.getId()==this.btnSubmit.getId())
-//        {
+        if(view.getId()==this.btnSubmit.getId())
+        {
 //            String strOperand= this.inputOperand.getText().toString();
 //            this.listener.changePage(1);
 //            this.listener.changeMessage(strOperand);
 //            int intOperand=Integer.parseInt(strOperand);
-//        }
+
+            this.listener.changePage(2);
+
+        }
+    }
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        if(context instanceof FragmentListener){
+            this.listener=(FragmentListener) context;
+        }
     }
 }
