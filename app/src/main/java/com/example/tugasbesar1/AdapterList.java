@@ -1,7 +1,6 @@
 package com.example.tugasbesar1;
 
 import android.app.Activity;
-import android.net.wifi.aware.PublishConfig;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,18 +9,18 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class Adapter extends BaseAdapter {
+public class AdapterList extends BaseAdapter {
 
-    private ArrayList<String> arrayList;
+    private ArrayList<Angka> arrayList;
     private Activity activity;
 
-    public Adapter(Activity activity){
+    public AdapterList(Activity activity){
         this.activity = activity;
         this.arrayList = new ArrayList<>();
     }
 
-    public void add(String s){
-        this.arrayList.add(s);
+    public void add(Angka a){
+        this.arrayList.add(a);
     }
     @Override
     public int getCount() {
@@ -32,6 +31,7 @@ public class Adapter extends BaseAdapter {
     public Object getItem(int i) {
         return this.arrayList.get(i);
     }
+
 
     @Override
     public long getItemId(int i) {
@@ -49,21 +49,25 @@ public class Adapter extends BaseAdapter {
         else{
             viewHolder = (ViewHolder) view.getTag();
         }
-        viewHolder.updateView(this.getItem(i) + "");
+        Angka a = (Angka) this.getItem(i);
+        viewHolder.updateView(a.getAngka() + "",a.getTanda());
         return  view;
 
     }
 
     private class ViewHolder{
 //        insert all your view element here
-        protected TextView textView;
+        protected TextView textViewa;
+        protected TextView textViewb;
         public ViewHolder(View view){
-            this.textView = view.findViewById(R.id.list_tv);
+            this.textViewa = view.findViewById(R.id.list_tv);
+            this.textViewb = view.findViewById(R.id.kode);
         }
 
 //        update all your list here
-        public void updateView(String s){
-            this.textView.setText(s);
+        public void updateView(String angka, String kode){
+            this.textViewa.setText(angka);
+            this.textViewb.setText(kode);
         }
 
     }

@@ -6,11 +6,12 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
-
+import com.example.tugasbesar1.AdapterList;
 import androidx.fragment.app.Fragment;
 
-import com.example.tugasbesar1.R;
+
 
 public class MainFragment extends Fragment implements View.OnClickListener {
     protected Button btnAdd, btnRes, btnClear, btnSave;
@@ -18,6 +19,10 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     protected FragmentListener listener;
 
     protected TextView output;
+    private ListView exampleList;
+   private AdapterList exampleAdapter;
+    private Angka angka;
+
 
     public static MainFragment newInstance(String value){
         MainFragment mainFragment = new MainFragment();
@@ -32,6 +37,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         this.btnAdd=view.findViewById(R.id.btn_Add);
         this.btnClear=view.findViewById(R.id.btn_Clear);
         this.btnAdd.setOnClickListener(this);
+        this.exampleList = view.findViewById(R.id.listview);
+        this.exampleAdapter = new AdapterList(getActivity());
+        this.angka = new Angka("+","20");
+        this.exampleAdapter.add(angka);
+        this.exampleList.setAdapter(this.exampleAdapter);
         return view;
     }
     @Override
