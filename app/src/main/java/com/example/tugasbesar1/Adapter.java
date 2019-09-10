@@ -55,7 +55,7 @@ public class Adapter extends BaseAdapter {
     }
 
     private class ViewHolder{
-//        insser all your view element here
+//        insert all your view element here
         protected TextView textView;
         public ViewHolder(View view){
             this.textView = view.findViewById(R.id.list_tv);

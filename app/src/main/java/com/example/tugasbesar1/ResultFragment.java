@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import com.example.tugasbesar1.R;
+
 
 
 public class ResultFragment extends androidx.fragment.app.DialogFragment {
