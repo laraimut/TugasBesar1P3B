@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">TugasBesar1</string>
+    <string-array name="operators">
+    <item>+</item>
+    <item>-</item>
+    <item>/</item>
+    <item>*</item>
+</string-array>
+
 </resources>
