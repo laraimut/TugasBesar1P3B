@@ -12,7 +12,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 //    protected com.example.calculator.MainFragment mainFragment;
 //    protected FragmentManager fragmentManager;
 //    private ListView exampleList;
-//    private Adapter exampleAdapter;
+//    private AdapterList exampleAdapter;
     protected FragmentManager fragmentManager;
     protected MainFragment mainFragment;
     protected AddFragment addFragment;
@@ -28,7 +28,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 //        this.addFragment= com.example.calculator.AddFragment.newInstance("this id add frag");
 //        this.fragmentManager=this.getSupportFragmentManager();
 //        this.exampleList = this.findViewById(R.id.list_tv);
-//        this.exampleAdapter = new Adapter(this);
+//        this.exampleAdapter = new AdapterList(this);
 //        this.exampleAdapter.add("test");
 //        this.exampleList.setAdapter(exampleAdapter);
 //        this.changePage(1);

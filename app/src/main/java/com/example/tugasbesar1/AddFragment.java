@@ -18,6 +18,8 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     protected EditText inputOperand;
     protected FragmentListener listener;
 
+    protected com.example.tugasbesar1.FragmentListener listener;
+
 
     public static AddFragment newInstance(String value){
         AddFragment addFragment = new AddFragment();
