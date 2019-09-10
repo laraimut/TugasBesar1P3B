@@ -9,11 +9,13 @@ import android.widget.EditText;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.tugasbesar1.R;
+
 public class AddFragment extends Fragment implements View.OnClickListener {
 
     protected Button btnSubmit;
     protected EditText inputOperand;
-    protected FragmentListener listener;
+    protected com.example.calculator.FragmentListener listener;
 
     public static AddFragment newInstance(String value){
         AddFragment addFragment = new AddFragment();

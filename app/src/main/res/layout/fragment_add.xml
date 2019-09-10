@@ -8,13 +8,15 @@
         android:layout_height="wrap_content"
         android:text="Operator : "
         android:id="@+id/operator"/>
-    <!--<Spinner-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:></Spinner>-->
+
+    <Spinner
+        android:id="@+id/operators"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="100dp"/>
 
     <EditText
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/operator"
         android:text="Operand"

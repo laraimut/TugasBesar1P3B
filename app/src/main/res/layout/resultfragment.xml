@@ -11,7 +11,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="Hasilnya" />
+            android:text="The result" />
 
         <TextView
             android:id="@+id/tvResultAngka"

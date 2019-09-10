@@ -10,9 +10,11 @@ import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.tugasbesar1.R;
+
 public class MainFragment extends Fragment implements View.OnClickListener {
     protected Button btnAdd, btnRes, btnClear, btnSave;
-    protected FragmentListener listener;
+    protected com.example.calculator.FragmentListener listener;
     protected TextView output;
 
     public static MainFragment newInstance(String value){
