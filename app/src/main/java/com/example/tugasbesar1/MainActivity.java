@@ -6,13 +6,19 @@ import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
 import android.widget.ListView;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements FragmentListener {
 
 //    protected com.example.calculator.AddFragment addFragment;
 //    protected com.example.calculator.MainFragment mainFragment;
 //    protected FragmentManager fragmentManager;
-    private ListView exampleList;
-    private Adapter exampleAdapter;
+//    private ListView exampleList;
+//    private Adapter exampleAdapter;
+    protected FragmentManager fragmentManager;
+    protected MainFragment mainFragment;
+    protected AddFragment addFragment;
+    protected ResultFragment resultFragment;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,15 +27,31 @@ public class MainActivity extends AppCompatActivity {
 //        this.mainFragment= com.example.calculator.MainFragment.newInstance("this is main frag");
 //        this.addFragment= com.example.calculator.AddFragment.newInstance("this id add frag");
 //        this.fragmentManager=this.getSupportFragmentManager();
-
-        this.exampleList = this.findViewById(R.id.list_tv);
-        this.exampleAdapter = new Adapter(this);
-        this.exampleAdapter.add("test");
-        this.exampleList.setAdapter(exampleAdapter);
-
-
+//        this.exampleList = this.findViewById(R.id.list_tv);
+//        this.exampleAdapter = new Adapter(this);
+//        this.exampleAdapter.add("test");
+//        this.exampleList.setAdapter(exampleAdapter);
 //        this.changePage(1);
+
+        this.mainFragment=MainFragment.newInstance("");
+        this.addFragment=AddFragment.newInstance("");
+        this.resultFragment=ResultFragment.newInstance("");
+        this.fragmentManager=this.getSupportFragmentManager();
+
+        FragmentTransaction ft=this.fragmentManager.beginTransaction();
+        ft.add(R.id.fragment_container, mainFragment).commit();
     }
+
+    @Override
+    public void changePage(int page) {
+
+    }
+
+    @Override
+    public void changeMessage(String Message) {
+
+    }
+
 //    public void changePage(int page){
 //        FragmentTransaction ft = this.fragmentManager.beginTransaction();
 //        if(page == 1){

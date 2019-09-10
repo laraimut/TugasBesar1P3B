@@ -15,7 +15,9 @@ public class AddFragment extends Fragment implements View.OnClickListener {
 
     protected Button btnSubmit;
     protected EditText inputOperand;
+
     protected com.example.tugasbesar1.FragmentListener listener;
+
 
     public static AddFragment newInstance(String value){
         AddFragment addFragment = new AddFragment();
@@ -35,12 +37,12 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     }
     @Override
     public void onClick(View view) {
-        if(view.getId()==this.btnSubmit.getId())
-        {
-            String strOperand= this.inputOperand.getText().toString();
-            this.listener.changePage(1);
-            this.listener.changeMessage(strOperand);
-            int intOperand=Integer.parseInt(strOperand);
-        }
+//        if(view.getId()==this.btnSubmit.getId())
+//        {
+//            String strOperand= this.inputOperand.getText().toString();
+//            this.listener.changePage(1);
+//            this.listener.changeMessage(strOperand);
+//            int intOperand=Integer.parseInt(strOperand);
+//        }
     }
 }
