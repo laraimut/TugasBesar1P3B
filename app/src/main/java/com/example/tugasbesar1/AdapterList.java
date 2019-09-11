@@ -54,6 +54,11 @@ public class AdapterList extends BaseAdapter {
         return  view;
 
     }
+    public void clearList()
+    {
+        this.arrayList.clear();
+    }
+
 
     private class ViewHolder{
 //        insert all your view element here
@@ -69,6 +74,7 @@ public class AdapterList extends BaseAdapter {
             this.textViewa.setText(angka);
             this.textViewb.setText(kode);
         }
+
 
     }
 }

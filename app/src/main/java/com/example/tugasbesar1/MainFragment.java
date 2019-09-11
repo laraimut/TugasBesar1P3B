@@ -20,6 +20,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     protected TextView output;
 
+    protected AdapterList adapterList;
+
+
 
     public static MainFragment newInstance(String value){
         MainFragment mainFragment = new MainFragment();
@@ -55,6 +58,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
            Log.d("debug", "onClick: CLEAR");
            this.listener.changePage(3);
        }
+        if(view.getId()==this.btnClear.getId())
+        {
+            this.adapterList.clearList();
+        }
+
 
 
     }

@@ -45,7 +45,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         this.btnSubmit.setOnClickListener(this);
         this.angkaa = view.findViewById(R.id.operator);
         this.operatorcuy =view.findViewById(R.id.operators);
-        this.exampleAdapter = new AdapterList(getActivity());
+        this.exampleAdapter = new AdapterList(this.getActivity());
         this.exampleList = view.findViewById(R.id.listview);
         return view;
     }
@@ -56,8 +56,9 @@ public class AddFragment extends Fragment implements View.OnClickListener {
             this.tanda = this.operatorcuy.getSelectedItem().toString();
             String text = angkaa.getText().toString();
             this.angka = new Angka(tanda,text);
+
             this.exampleAdapter.add(angka);
-//            this.exampleList.setAdapter(this.exampleAdapter);
+           //this.exampleList.setAdapter(this.exampleAdapter);
 
             this.listener.changePage(2);
 
