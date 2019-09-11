@@ -7,22 +7,18 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.ListView;
+
 import android.widget.TextView;
-import com.example.tugasbesar1.AdapterList;
 import androidx.fragment.app.Fragment;
 
 
 
 public class MainFragment extends Fragment implements View.OnClickListener {
-    protected Button btnAdd, btnRes, btnClear, btnSave;
+    protected Button btnAdd, btnRes, btnClear, btnSave ,btnsubmit;
 
     protected FragmentListener listener;
 
     protected TextView output;
-    private ListView exampleList;
-   private AdapterList exampleAdapter;
-    private Angka angka;
 
 
     public static MainFragment newInstance(String value){
@@ -42,28 +38,28 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         this.btnRes=view.findViewById(R.id.btn_Res);
         this.btnRes.setOnClickListener(this);
 
-        this.exampleList = view.findViewById(R.id.listview);
-        this.exampleAdapter = new AdapterList(getActivity());
-        this.angka = new Angka("+","20");
-        this.exampleAdapter.add(angka);
-        this.exampleList.setAdapter(this.exampleAdapter);
 
         return view;
     }
     @Override
     public void onClick(View view) {
-       if(view.getId()==this.btnAdd.getId())
-       {
-           Log.d("debug", "onClick: ");
+       if(view.getId()==this.btnAdd.getId()) {
+//           Log.d("debug", "onClick: ");
+
+
            this.listener.changePage(1);
        }
+
        if(view.getId()==this.btnRes.getId())
        {
            Log.d("debug", "onClick: CLEAR");
            this.listener.changePage(3);
        }
 
+
     }
+
+
 
     @Override
     public void onAttach(Context context) {

@@ -4,7 +4,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Spinner;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
 
@@ -17,7 +21,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     protected MainFragment mainFragment;
     protected AddFragment addFragment;
     protected ResultFragment resultFragment;
-
+    private Spinner operatorcuy;
 
 
     @Override
@@ -32,6 +36,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 //        this.exampleAdapter.add("test");
 //        this.exampleList.setAdapter(exampleAdapter);
 //        this.changePage(1);
+
 
         this.mainFragment=MainFragment.newInstance("");
         this.addFragment=AddFragment.newInstance("");
@@ -67,6 +72,12 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     @Override
     public void changeMessage(String Message) {
 
+    }
+    public String tanda(String tanda){
+        return " ";
+    }
+    public String angkanya(String tanda){
+        return " ";
     }
 
 //    public void changePage(int page){
