@@ -120,13 +120,13 @@ public class MainFragment extends Fragment implements View.OnClickListener {
   }
 
 
-  public void setOutput(int res){
-        this.listener.setOutput(res);
-
-  public void delete (int i){
-        this.exampleAdapter.delete(i);
-
+  public void setOutput(int res) {
+      this.presenter.setOutput(res);
   }
+      public void delete ( int i){
+          this.exampleAdapter.delete(i);
+
+      }
 
 
 
