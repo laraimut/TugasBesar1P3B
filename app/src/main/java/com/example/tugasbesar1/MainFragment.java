@@ -68,22 +68,22 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     }
     @Override
     public void onClick(View view) {
-       if(view.getId()==this.btnAdd.getId()) {
+        if(view.getId()==this.btnAdd.getId()) {
 
 
-           this.listener.changePage(1);
-       }
+            this.listener.changePage(1);
+        }
 
-       if(view.getId()==this.btnRes.getId())
-       {
-           Log.d("debug", "onClick: CLEAR");
+        if(view.getId()==this.btnRes.getId())
+        {
+            Log.d("debug", "onClick: CLEAR");
 
-           int res = this.kal.hitung(this.exampleAdapter);
-           this.output.setText( res + "");
-           this.setOutput(res);
-           this.listener.changePage(3);
+            int res = this.kal.hitung(this.exampleAdapter);
+            this.output.setText( res + "");
+            this.setOutput(res);
+            this.listener.changePage(3);
 
-       }
+        }
         if(view.getId()==this.btnClear.getId())
         {
             this.exampleAdapter.clearList();
@@ -107,26 +107,28 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     private void loadData(){
         SharedPreferences sharedPreferences = getContext().getSharedPreferences("shared",Context.MODE_PRIVATE);
         Gson gson = new Gson();
-         String json = sharedPreferences.getString("calculator",null);
+        String json = sharedPreferences.getString("calculator",null);
         Type type = new TypeToken<ArrayList<Angka>>(){}.getType();
         this.exampleAdapter.setArrayList((ArrayList)gson.fromJson(json,type));
-
+         if(this.exampleAdapter.arrayList==null){
+             this.exampleAdapter.arrayList = new ArrayList<>();
+         }
 
 
     }
 
-  public void tambahh (Angka angka){
-      this.exampleAdapter.add(angka);
-  }
+    public void tambahh (Angka angka){
+        this.exampleAdapter.add(angka);
+    }
 
 
-  public void setOutput(int res) {
-      this.presenter.setOutput(res);
-  }
-      public void delete ( int i){
-          this.exampleAdapter.delete(i);
+    public void setOutput(int res) {
+        this.presenter.setOutput(res);
+    }
+    public void delete ( int i){
+        this.exampleAdapter.delete(i);
 
-      }
+    }
 
 
 

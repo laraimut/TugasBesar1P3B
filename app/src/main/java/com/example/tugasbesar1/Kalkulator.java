@@ -1,7 +1,5 @@
 package com.example.tugasbesar1;
 
-import android.util.Log;
-
 public class Kalkulator {
 
     public int hitung(AdapterList al){

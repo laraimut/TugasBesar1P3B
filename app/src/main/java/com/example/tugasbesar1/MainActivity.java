@@ -27,12 +27,12 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         this.resultFragment=ResultFragment.newInstance("");
         this.fragmentManager=this.getSupportFragmentManager();
         FragmentTransaction ft = this.fragmentManager.beginTransaction() ;
-  ft.add(R.id.fragment_container , this.mainFragment);
-  ft.add(R.id.fragment_container,this.addFragment);
-  ft.add(R.id.fragment_container,this.resultFragment);
-  ft.hide(this.addFragment);
-  ft.hide(this.resultFragment);
-  ft.commit();
+        ft.add(R.id.fragment_container , this.mainFragment);
+        ft.add(R.id.fragment_container,this.addFragment);
+        ft.add(R.id.fragment_container,this.resultFragment);
+        ft.hide(this.addFragment);
+        ft.hide(this.resultFragment);
+        ft.commit();
 
     }
 
