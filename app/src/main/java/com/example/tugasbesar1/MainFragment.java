@@ -46,7 +46,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         this.exampleAdapter = new AdapterList(this.getActivity());
         this.exampleList = view.findViewById(R.id.listview);
         this.exampleList.setAdapter(this.exampleAdapter);
-//        this.tambah(new Angka("-","00-"));
+//        this.tambahh(new Angka("-","00-"));
         return view;
     }
     @Override
@@ -55,7 +55,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 //           Log.d("debug", "onClick: ");
 
 
-           this.listener.changePage(2);
+           this.listener.changePage(1);
        }
 
        if(view.getId()==this.btnRes.getId())
