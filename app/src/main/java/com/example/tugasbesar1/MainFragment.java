@@ -65,6 +65,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         if(view.getId()==this.btnClear.getId())
         {
             this.exampleAdapter.clearList();
+            this.exampleAdapter.notifyDataSetChanged();
         }
 
 
