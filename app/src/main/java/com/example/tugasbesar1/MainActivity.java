@@ -14,6 +14,9 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     protected AddFragment addFragment;
     protected ResultFragment resultFragment;
 
+    private int res;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,7 +46,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
             ft.hide(addFragment);
             ft.show(mainFragment);
         }else if(page==3){
-            this.resultFragment=ResultFragment.newInstance("");
+            this.resultFragment=ResultFragment.newInstance(res+"");
             this.resultFragment.show(this.getSupportFragmentManager(),"dialog");
         }else if(page==4){
             this.resultFragment.dismiss();
@@ -54,6 +57,11 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     @Override
     public void changeMessage(String Message) {
 
+    }
+
+    @Override
+    public void setOutput(int res) {
+        this.res=res;
     }
 
     @Override
