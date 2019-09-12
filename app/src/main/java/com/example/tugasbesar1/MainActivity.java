@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
 //    private ListView exampleList;
 //    private AdapterList exampleAdapter;
     protected FragmentManager fragmentManager;
-    protected MainFragment mainFragment;
+    public MainFragment mainFragment;
     protected AddFragment addFragment;
     protected ResultFragment resultFragment;
     private Spinner operatorcuy;
@@ -28,27 +28,14 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        this.mainFragment= com.example.calculator.MainFragment.newInstance("this is main frag");
-//        this.addFragment= com.example.calculator.AddFragment.newInstance("this id add frag");
-//        this.fragmentManager=this.getSupportFragmentManager();
-//        this.exampleList = this.findViewById(R.id.list_tv);
-//        this.exampleAdapter = new AdapterList(this);
-//        this.exampleAdapter.add("test");
-//        this.exampleList.setAdapter(exampleAdapter);
-//        this.changePage(1);
-
-
         this.mainFragment=MainFragment.newInstance("");
         this.addFragment=AddFragment.newInstance("");
         this.resultFragment=ResultFragment.newInstance("");
         this.fragmentManager=this.getSupportFragmentManager();
+        this.mainFragment.tambahh(new Angka("asd" , "asd"));
 
-        FragmentTransaction ft=this.fragmentManager.beginTransaction();
-        ft.add(R.id.fragment_container, mainFragment);
-        ft.add(R.id.fragment_container, addFragment);
-        ft.show(mainFragment);
-        ft.hide(addFragment);
-        ft.commit();
+        this.changePage(1);
+        //this.mainFragment.test();
     }
 
     @Override
@@ -73,14 +60,14 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     public void changeMessage(String Message) {
 
     }
-    public String tanda(String tanda){
-        return " ";
-    }
-    public String angkanya(String tanda){
-        return " ";
+
+    @Override
+    public void tambah (Angka angka) {
+        this.mainFragment.tambahh(angka);
     }
 
-//    public void changePage(int page){
+//
+//        public void changePage(int page){
 //        FragmentTransaction ft = this.fragmentManager.beginTransaction();
 //        if(page == 1){
 //            if(this.mainFragment.isAdded()){
