@@ -1,22 +1,15 @@
 package com.example.tugasbesar1;
 
+import android.os.Bundle;
+import android.widget.Spinner;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.ListView;
-import android.widget.Spinner;
-import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity implements FragmentListener {
 
-//    protected com.example.calculator.AddFragment addFragment;
-//    protected com.example.calculator.MainFragment mainFragment;
-//    protected FragmentManager fragmentManager;
-//    private ListView exampleList;
-//    private AdapterList exampleAdapter;
+
     protected FragmentManager fragmentManager;
     public MainFragment mainFragment;
     protected AddFragment addFragment;

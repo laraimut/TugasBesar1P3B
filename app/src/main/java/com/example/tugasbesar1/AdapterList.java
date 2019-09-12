@@ -33,7 +33,12 @@ public class AdapterList extends BaseAdapter {
         return this.arrayList.get(i);
     }
 
-
+  public ArrayList getall(){
+        return this.arrayList;
+  }
+  public void setArrayList(ArrayList arr){
+        this.arrayList = arr;
+  }
     @Override
     public long getItemId(int i) {
         return 0;
