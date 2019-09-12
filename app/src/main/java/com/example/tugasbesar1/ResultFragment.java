@@ -28,7 +28,7 @@ public class ResultFragment extends DialogFragment implements View.OnClickListen
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container , Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.resultfragment,container,false);
-        this.result = view.findViewById(R.id.tvResult);
+        this.result = view.findViewById(R.id.tvResultAngka);
         this.result.setText(this.getArguments().getString("result" ,""));
         this.btn=view.findViewById(R.id.button_id);
         this.btn.setOnClickListener(this);

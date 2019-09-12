@@ -25,6 +25,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     public ListView exampleList;
     public AdapterList exampleAdapter;
 
+    public Kalkulator kal;
+
 
 
     public static MainFragment newInstance(String value){
@@ -47,6 +49,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         this.exampleList = view.findViewById(R.id.listview);
         this.exampleList.setAdapter(this.exampleAdapter);
 //        this.tambahh(new Angka("-","00-"));
+
+        this.kal=new Kalkulator();
         return view;
     }
     @Override
@@ -61,7 +65,12 @@ public class MainFragment extends Fragment implements View.OnClickListener {
        if(view.getId()==this.btnRes.getId())
        {
            Log.d("debug", "onClick: CLEAR");
+
+           int res = this.kal.hitung(this.exampleAdapter);
+           this.output.setText( res + "");
+           this.setOutput(res);
            this.listener.changePage(3);
+
        }
         if(view.getId()==this.btnClear.getId())
         {
@@ -76,8 +85,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
       this.exampleAdapter.add(angka);
   }
 
-  public void test(){
-        this.output.setText("ok");
+  public void setOutput(int res){
+        this.listener.setOutput(res);
   }
 
     @Override
