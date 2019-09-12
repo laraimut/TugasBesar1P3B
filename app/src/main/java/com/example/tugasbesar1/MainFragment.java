@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import android.widget.ListView;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
@@ -16,11 +17,13 @@ import androidx.fragment.app.Fragment;
 public class MainFragment extends Fragment implements View.OnClickListener {
     protected Button btnAdd, btnRes, btnClear, btnSave ,btnsubmit;
 
-    protected FragmentListener listener;
+    public FragmentListener listener;
 
     protected TextView output;
 
-    protected AdapterList adapterList;
+    public AdapterList adapterList;
+    public ListView exampleList;
+    public AdapterList exampleAdapter;
 
 
 
@@ -37,11 +40,13 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         this.btnAdd=view.findViewById(R.id.btn_Add);
         this.btnClear=view.findViewById(R.id.btn_Clear);
         this.btnAdd.setOnClickListener(this);
-
+        this.output= view.findViewById(R.id.label);
         this.btnRes=view.findViewById(R.id.btn_Res);
         this.btnRes.setOnClickListener(this);
-
-
+        this.exampleAdapter = new AdapterList(this.getActivity());
+        this.exampleList = view.findViewById(R.id.listview);
+        this.exampleList.setAdapter(this.exampleAdapter);
+//        this.tambah(new Angka("-","00-"));
         return view;
     }
     @Override
@@ -50,7 +55,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 //           Log.d("debug", "onClick: ");
 
 
-           this.listener.changePage(1);
+           this.listener.changePage(2);
        }
 
        if(view.getId()==this.btnRes.getId())
@@ -67,7 +72,13 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     }
 
+  public void tambahh (Angka angka){
+      this.exampleAdapter.add(angka);
+  }
 
+  public void test(){
+        this.output.setText("ok");
+  }
 
     @Override
     public void onAttach(Context context) {
@@ -81,4 +92,5 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     {
         this.output.setText(str);
     }
+
 }

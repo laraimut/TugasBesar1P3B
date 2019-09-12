@@ -3,6 +3,5 @@ package com.example.tugasbesar1;
 public interface FragmentListener {
     void changePage(int page);
     void changeMessage(String Message);
-    String tanda ( String tanda);
-    String angkanya (String angka);
+    void tambah (Angka angka);
 }

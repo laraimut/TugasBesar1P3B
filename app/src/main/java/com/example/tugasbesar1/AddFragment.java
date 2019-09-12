@@ -21,9 +21,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     protected Button btnSubmit;
     protected EditText inputOperand;
     protected FragmentListener listener;
-    private ListView exampleList;
-    private AdapterList exampleAdapter;
-    private Angka angka;
+
     private String tanda;
     private TextView angkaa;
     private Spinner operatorcuy;
@@ -45,22 +43,19 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         this.btnSubmit.setOnClickListener(this);
         this.angkaa = view.findViewById(R.id.operator);
         this.operatorcuy =view.findViewById(R.id.operators);
-        this.exampleAdapter = new AdapterList(this.getActivity());
-        this.exampleList = view.findViewById(R.id.listview);
+
         return view;
     }
     @Override
     public void onClick(View view) {
         if(view.getId()==this.btnSubmit.getId())
         {
-            this.tanda = this.operatorcuy.getSelectedItem().toString();
-            String text = angkaa.getText().toString();
-            this.angka = new Angka(tanda,text);
+//            this.tanda = this.operatorcuy.getSelectedItem().toString();
+//            String text = angkaa.getText().toString();
+//            Angka angka = new Angka("_+","0");
+//            this.listener.add(angka);
 
-            this.exampleAdapter.add(angka);
-           //this.exampleList.setAdapter(this.exampleAdapter);
-
-            this.listener.changePage(2);
+            this.listener.changePage(1);
 
         }
     }
