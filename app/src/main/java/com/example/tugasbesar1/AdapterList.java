@@ -21,6 +21,7 @@ public class AdapterList extends BaseAdapter {
 
     public void add(Angka a){
         this.arrayList.add(a);
+        this.notifyDataSetChanged();
     }
     @Override
     public int getCount() {

@@ -50,10 +50,10 @@ public class AddFragment extends Fragment implements View.OnClickListener {
     public void onClick(View view) {
         if(view.getId()==this.btnSubmit.getId())
         {
-//            this.tanda = this.operatorcuy.getSelectedItem().toString();
-//            String text = angkaa.getText().toString();
-//            Angka angka = new Angka("_+","0");
-//            this.listener.add(angka);
+            this.tanda = this.operatorcuy.getSelectedItem().toString();
+            String text = inputOperand.getText().toString();
+            Angka angka = new Angka(this.tanda,text);
+            this.listener.tambah(angka);
 
             this.listener.changePage(2);
 
