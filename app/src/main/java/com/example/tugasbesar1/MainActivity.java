@@ -32,9 +32,16 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.addFragment=AddFragment.newInstance("");
         this.resultFragment=ResultFragment.newInstance("");
         this.fragmentManager=this.getSupportFragmentManager();
-        this.mainFragment.tambahh(new Angka("asd" , "asd"));
+        FragmentTransaction ft = this.fragmentManager.beginTransaction() ;
+  ft.add(R.id.fragment_container , this.mainFragment);
+  ft.add(R.id.fragment_container,this.addFragment);
+  ft.add(R.id.fragment_container,this.resultFragment);
+  ft.hide(this.addFragment);
+  ft.hide(this.resultFragment);
+  ft.commit();
+//        tambah(new Angka("asd" , "asd"));
 
-        this.changePage(1);
+
         //this.mainFragment.test();
     }
 

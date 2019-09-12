@@ -55,7 +55,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
 //            Angka angka = new Angka("_+","0");
 //            this.listener.add(angka);
 
-            this.listener.changePage(1);
+            this.listener.changePage(2);
 
         }
     }
