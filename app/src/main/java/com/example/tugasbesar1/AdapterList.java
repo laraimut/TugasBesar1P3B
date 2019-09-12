@@ -41,12 +41,12 @@ public class AdapterList extends BaseAdapter {
         return this.arrayList.get(i);
     }
 
-  public ArrayList getall(){
+    public ArrayList getall(){
         return this.arrayList;
-  }
-  public void setArrayList(ArrayList arr){
+    }
+    public void setArrayList(ArrayList arr){
         this.arrayList = arr;
-  }
+    }
     @Override
     public long getItemId(int i) {
         return 0;
@@ -78,7 +78,7 @@ public class AdapterList extends BaseAdapter {
 
 
     private class ViewHolder implements View.OnClickListener {
-//        insert all your view element here
+        //        insert all your view element here
         protected TextView textViewa;
         protected TextView textViewb;
         protected ImageView sampah;
@@ -93,7 +93,7 @@ public class AdapterList extends BaseAdapter {
             this.sampah.setOnClickListener(this);
         }
 
-//        update all your list here
+        //        update all your list here
         public void updateView(String angka, String kode){
             this.textViewa.setText(angka);
             this.textViewb.setText(kode);
