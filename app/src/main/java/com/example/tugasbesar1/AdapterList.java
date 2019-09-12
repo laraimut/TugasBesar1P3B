@@ -5,22 +5,30 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
 
 public class AdapterList extends BaseAdapter {
 
-    private ArrayList<Angka> arrayList;
+    public ArrayList<Angka> arrayList;
     private Activity activity;
+    protected Presenter fl;
 
-    public AdapterList(Activity activity){
+    public AdapterList(Activity activity,Presenter fl){
         this.activity = activity;
         this.arrayList = new ArrayList<>();
+        this.fl=fl;
     }
 
     public void add(Angka a){
         this.arrayList.add(a);
+        this.notifyDataSetChanged();
+    }
+
+    public void delete(int i){
+        this.arrayList.remove(i);
         this.notifyDataSetChanged();
     }
     @Override
@@ -44,12 +52,15 @@ public class AdapterList extends BaseAdapter {
         return 0;
     }
 
+    public void delete(){
+
+    }
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
         if(view == null){
             view = LayoutInflater.from(this.activity).inflate(R.layout.list , viewGroup , false);
-            viewHolder = new ViewHolder(view);
+            viewHolder = new ViewHolder(view,i,fl);
             view.setTag(viewHolder);
         }
         else{
@@ -66,13 +77,20 @@ public class AdapterList extends BaseAdapter {
     }
 
 
-    private class ViewHolder{
+    private class ViewHolder implements View.OnClickListener {
 //        insert all your view element here
         protected TextView textViewa;
         protected TextView textViewb;
-        public ViewHolder(View view){
+        protected ImageView sampah;
+        protected int index;
+        protected Presenter pres;
+        public ViewHolder(View view,int i,Presenter fl){
             this.textViewa = view.findViewById(R.id.list_tv);
             this.textViewb = view.findViewById(R.id.kode);
+            this.sampah=view.findViewById(R.id.sampah);
+            this.index=i;
+            this.pres=fl;
+            this.sampah.setOnClickListener(this);
         }
 
 //        update all your list here
@@ -82,5 +100,12 @@ public class AdapterList extends BaseAdapter {
         }
 
 
+        @Override
+        public void onClick(View view) {
+            if(view.getId()==this.sampah.getId()){
+                this.pres.delete(this.index);
+
+            }
+        }
     }
 }

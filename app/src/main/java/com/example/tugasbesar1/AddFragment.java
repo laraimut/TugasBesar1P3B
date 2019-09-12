@@ -7,21 +7,17 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Spinner;
 import android.widget.TextView;
 
 import androidx.fragment.app.Fragment;
-import com.example.tugasbesar1.AdapterList;
-
-import com.example.tugasbesar1.R;
 
 public class AddFragment extends Fragment implements View.OnClickListener {
 
     protected Button btnSubmit;
     protected EditText inputOperand;
     protected FragmentListener listener;
-
+    protected Presenter pres;
     private String tanda;
     private TextView angkaa;
     private Spinner operatorcuy;
@@ -53,7 +49,7 @@ public class AddFragment extends Fragment implements View.OnClickListener {
             this.tanda = this.operatorcuy.getSelectedItem().toString();
             String text = inputOperand.getText().toString();
             Angka angka = new Angka(this.tanda,text);
-            this.listener.tambah(angka);
+            this.pres.tambah(angka);
 
             this.listener.changePage(2);
 
@@ -65,6 +61,9 @@ public class AddFragment extends Fragment implements View.OnClickListener {
         super.onAttach(context);
         if(context instanceof FragmentListener){
             this.listener=(FragmentListener) context;
+        }
+        if(context instanceof Presenter){
+            this.pres=(Presenter) context;
         }
     }
 }
