@@ -1,20 +1,18 @@
 package com.example.tugasbesar1;
 
 import android.os.Bundle;
-import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
-public class MainActivity extends AppCompatActivity implements FragmentListener {
+public class MainActivity extends AppCompatActivity implements FragmentListener,Presenter {
 
 
     protected FragmentManager fragmentManager;
     public MainFragment mainFragment;
     protected AddFragment addFragment;
     protected ResultFragment resultFragment;
-    private Spinner operatorcuy;
 
 
     @Override
@@ -61,6 +59,11 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
     @Override
     public void tambah (Angka angka) {
         this.mainFragment.tambahh(angka);
+    }
+
+    @Override
+    public void delete(int i) {
+        this.mainFragment.delete(i);
     }
 
 

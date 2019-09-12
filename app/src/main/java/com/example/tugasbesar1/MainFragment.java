@@ -24,7 +24,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     protected Button btnAdd, btnRes, btnClear, btnSave ,btnsubmit;
 
     public FragmentListener listener;
-
+    public Presenter presenter;
     protected TextView output;
 
 
@@ -52,7 +52,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         this.btnRes.setOnClickListener(this);
         this.btnClear.setOnClickListener(this);
         this.btnSave.setOnClickListener(this);
-        this.exampleAdapter = new AdapterList(this.getActivity());
+        this.exampleAdapter = new AdapterList(this.getActivity(),this.presenter);
         this.exampleList = view.findViewById(R.id.listview);
         this.exampleList.setAdapter(this.exampleAdapter);
         this.loadData();
@@ -105,6 +105,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
   public void tambahh (Angka angka){
       this.exampleAdapter.add(angka);
   }
+  public void delete (int i){
+        this.exampleAdapter.delete(i);
+  }
 
 
 
@@ -113,6 +116,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         super.onAttach(context);
         if(context instanceof FragmentListener){
             this.listener = (FragmentListener) context;
+        }
+        if(context instanceof Presenter){
+            this.presenter=(Presenter) context;
         }
     }
 
