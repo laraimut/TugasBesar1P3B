@@ -39,10 +39,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
   ft.hide(this.addFragment);
   ft.hide(this.resultFragment);
   ft.commit();
-//        tambah(new Angka("asd" , "asd"));
 
-
-        //this.mainFragment.test();
     }
 
     @Override
@@ -73,37 +70,5 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
         this.mainFragment.tambahh(angka);
     }
 
-//
-//        public void changePage(int page){
-//        FragmentTransaction ft = this.fragmentManager.beginTransaction();
-//        if(page == 1){
-//            if(this.mainFragment.isAdded()){
-//                ft.show(this.mainFragment);
-//            }
-//            else{
-//                ft.add(R.id.fragment_container , this.mainFragment);
-//            }
-//            if(this.addFragment.isAdded()){
-//                ft.hide(this.addFragment);
-//            }
-//        }
-//        else if(page ==2){
-//            if(this.mainFragment.isAdded()){
-//                ft.hide(this.mainFragment);
-//            }
-//            if(this.addFragment.isAdded()){
-//                ft.show(this.addFragment);
-//            }
-//            else{
-//                ft.add(R.id.fragment_container , this.addFragment);
-//            }
-//        }
-//        ft.commit();
-//    }
 
-//    @Override
-//    public void changeMessage(String message) {
-//        this.mainFragment.setText(message);
-//
-//    }
 }
