@@ -39,7 +39,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener 
   ft.hide(this.addFragment);
   ft.hide(this.resultFragment);
   ft.commit();
-        this.mainFragment.tambahh(new Angka("asd" , "asd"));
+//        tambah(new Angka("asd" , "asd"));
 
 
         //this.mainFragment.test();
