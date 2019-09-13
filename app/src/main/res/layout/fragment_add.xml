@@ -11,10 +11,13 @@
 
     <Spinner
         android:id="@+id/operators"
-        android:layout_width="wrap_content"
+        android:layout_width="70dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="100dp"
-        android:entries="@array/operators"/>
+        android:entries="@array/operators"
+        android:padding="5dp"
+        android:textAlignment="center"
+        android:backgroundTint="@color/colorAccent"/>
 
     <EditText
         android:layout_width="wrap_content"
@@ -27,5 +30,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/operand"
         android:text="Submit"
-        android:id="@+id/btn_Submit"/>
+        android:id="@+id/btn_Submit"
+        android:backgroundTint="@color/colorBisque"/>
+
 </RelativeLayout>
