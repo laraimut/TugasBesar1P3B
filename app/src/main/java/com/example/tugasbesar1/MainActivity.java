@@ -14,7 +14,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     protected AddFragment addFragment;
     protected ResultFragment resultFragment;
 
-    private int res;
+    private double res;
 
 
 
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     }
 
     @Override
-    public void setOutput(int res) {
+    public void setOutput(double res) {
         this.res=res;
     }
 
@@ -73,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     public void delete(int i) {
         this.mainFragment.delete(i);
     }
+
+
 
 
 }

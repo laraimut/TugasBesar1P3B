@@ -4,5 +4,5 @@ public interface Presenter  {
     void changeMessage(String Message);
     void tambah (Angka angka);
     void delete (int i);
-    void setOutput(int res);
+    void setOutput(double res);
 }

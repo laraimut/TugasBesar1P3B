@@ -95,6 +95,7 @@ public class AdapterList extends BaseAdapter {
             this.index=i;
             this.pres=fl;
             this.sampah.setOnClickListener(this);
+
         }
 
         //        update all your list here
