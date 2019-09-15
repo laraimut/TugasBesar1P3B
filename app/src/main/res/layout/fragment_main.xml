@@ -47,27 +47,31 @@
             android:text="Add"
             android:id="@+id/btn_Add"
             android:layout_alignParentBottom="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorBisque"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Result"
             android:id="@+id/btn_Res"
             android:layout_alignParentBottom="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorBisque"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Clear"
             android:id="@+id/btn_Clear"
             android:layout_alignParentBottom="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorBisque"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save"
             android:id="@+id/btn_Save"
             android:layout_alignParentBottom="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorBisque"/>
     </LinearLayout>
 </RelativeLayout>

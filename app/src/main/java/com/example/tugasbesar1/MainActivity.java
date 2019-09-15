@@ -2,7 +2,10 @@ package com.example.tugasbesar1;
 
 import android.os.Bundle;
 
+import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 
@@ -13,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     public MainFragment mainFragment;
     protected AddFragment addFragment;
     protected ResultFragment resultFragment;
-
+    private Toolbar toolbar;
     private double res;
 
 
@@ -26,6 +29,12 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         this.addFragment=AddFragment.newInstance("");
         this.resultFragment=ResultFragment.newInstance("");
         this.fragmentManager=this.getSupportFragmentManager();
+        this.toolbar = this.findViewById(R.id.toolbar);
+        this.setSupportActionBar(this.toolbar);
+        DrawerLayout drawer = this.findViewById(R.id.drawer_layout);
+        ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.open , R.string.close);
+        drawer.addDrawerListener(actionBarDrawerToggle);
+        actionBarDrawerToggle.syncState();
         FragmentTransaction ft = this.fragmentManager.beginTransaction() ;
         ft.add(R.id.fragment_container , this.mainFragment);
         ft.add(R.id.fragment_container,this.addFragment);
@@ -52,6 +61,12 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
             this.resultFragment.dismiss();
         }
         ft.commit() ;
+    }
+
+    @Override
+    public void closeApplication() {
+        this.moveTaskToBack(true);
+        this.finish();
     }
 
     @Override
