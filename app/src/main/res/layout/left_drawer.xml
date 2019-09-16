@@ -25,7 +25,7 @@
             android:id="@+id/page2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add"
+            android:text="History"
             android:onClick="onCLick"
             android:clickable="true"
             android:padding="10dp">
