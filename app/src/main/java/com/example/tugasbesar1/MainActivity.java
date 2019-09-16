@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     protected ResultFragment resultFragment;
     private Toolbar toolbar;
     private double res;
-
+   protected DrawerLayout drawer;
 
 
     @Override
@@ -31,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         this.fragmentManager=this.getSupportFragmentManager();
         this.toolbar = this.findViewById(R.id.toolbar);
         this.setSupportActionBar(this.toolbar);
-        DrawerLayout drawer = this.findViewById(R.id.drawer_layout);
+        this.drawer= this.findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle actionBarDrawerToggle = new ActionBarDrawerToggle(this,drawer,toolbar,R.string.open , R.string.close);
         drawer.addDrawerListener(actionBarDrawerToggle);
         actionBarDrawerToggle.syncState();
@@ -61,6 +61,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
             this.resultFragment.dismiss();
         }
         ft.commit() ;
+        this.drawer.closeDrawers();
     }
 
     @Override
