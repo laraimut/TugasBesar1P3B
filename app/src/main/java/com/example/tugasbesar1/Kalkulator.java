@@ -1,9 +1,11 @@
 package com.example.tugasbesar1;
 
+import java.text.DecimalFormat;
+
 public class Kalkulator {
 
-    public int hitung(AdapterList al){
-        int res=0;
+    public double hitung(AdapterList al){
+        double res=0;
         for(int i=0; i<al.getCount();i++){
             Angka a= (Angka) al.getItem(i);
             if(a.getTanda().equals("+")){
@@ -16,6 +18,7 @@ public class Kalkulator {
                 res*= Integer.parseInt(a.getAngka().trim());
             }
         }
+
 
         return res;
     }

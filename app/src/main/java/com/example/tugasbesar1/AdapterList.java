@@ -15,14 +15,18 @@ public class AdapterList extends BaseAdapter {
     public ArrayList<Angka> arrayList;
     private Activity activity;
     protected Presenter fl;
+    private int res;
 
     public AdapterList(Activity activity,Presenter fl){
         this.activity = activity;
         this.arrayList = new ArrayList<>();
         this.fl=fl;
+        this.res=0;
     }
 
     public void add(Angka a){
+//        res+=Integer.parseInt(a.getAngka());
+//        Angka newA= new Angka(a.getTanda(),);
         this.arrayList.add(a);
         this.notifyDataSetChanged();
     }
@@ -95,7 +99,9 @@ public class AdapterList extends BaseAdapter {
             this.index=i;
             this.pres=fl;
             this.sampah.setOnClickListener(this);
+
             this.res=view.findViewById(R.id.list_res);
+
         }
 
         //        update all your list here

@@ -1,4 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    android:fitsSystemWindows="true">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <!--Toolbar-->
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            android:elevation="40dp"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+
+        </androidx.appcompat.widget.Toolbar>
+
+    </LinearLayout>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:id="@+id/recyclerview"
@@ -16,4 +41,19 @@
 
 
 </LinearLayout>
+<RelativeLayout
+android:id="@+id/left_drawer"
+android:layout_width="240dp"
+android:layout_height="match_parent"
+android:layout_gravity="start">
 
+<fragment
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@id/left_drawer"
+    android:name="com.example.tugasbesar1.LeftDrawer">
+
+</fragment>
+
+</RelativeLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

@@ -7,7 +7,12 @@
     android:layout_height="wrap_content"
     android:background="@android:color/white">
 
-
+<!--    <android.support.design.widget.FloatingActionButton-->
+<!--        android:id="@+id/fab"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_gravity="bottom|end"-->
+<!--         />-->
     <ListView
         android:layout_marginTop="100dp"
         android:layout_width="wrap_content"
@@ -42,27 +47,31 @@
             android:text="Add"
             android:id="@+id/btn_Add"
             android:layout_alignParentBottom="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorBisque"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Result"
             android:id="@+id/btn_Res"
             android:layout_alignParentBottom="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorBisque"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Clear"
             android:id="@+id/btn_Clear"
             android:layout_alignParentBottom="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorBisque"/>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save"
             android:id="@+id/btn_Save"
             android:layout_alignParentBottom="true"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:backgroundTint="@color/colorBisque"/>
     </LinearLayout>
 </RelativeLayout>

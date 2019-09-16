@@ -17,6 +17,7 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 
 import java.lang.reflect.Type;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 
@@ -78,8 +79,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         {
             Log.d("debug", "onClick: CLEAR");
 
-            int res = this.kal.hitung(this.exampleAdapter);
-            this.output.setText( res + "");
+            double res = this.kal.hitung(this.exampleAdapter);
+            DecimalFormat df= new DecimalFormat("#.####");
+            this.output.setText( df.format(res));
             this.setOutput(res);
             this.listener.changePage(3);
 
@@ -121,8 +123,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         this.exampleAdapter.add(angka);
     }
 
-
-    public void setOutput(int res) {
+    public void setOutput(double res) {
         this.presenter.setOutput(res);
     }
     public void delete ( int i){
