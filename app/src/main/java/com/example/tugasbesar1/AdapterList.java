@@ -58,6 +58,7 @@ public class AdapterList extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder viewHolder;
+        Kalkulator kal;
         if(view == null){
             view = LayoutInflater.from(this.activity).inflate(R.layout.list , viewGroup , false);
             viewHolder = new ViewHolder(view,i,fl);
@@ -67,7 +68,10 @@ public class AdapterList extends BaseAdapter {
             viewHolder = (ViewHolder) view.getTag();
         }
         Angka a = (Angka) this.getItem(i);
-        viewHolder.updateView(a.getAngka() + "",a.getTanda());
+        viewHolder.setIndex(i);
+        kal=new Kalkulator();
+        int res=kal.hitung2(this,i);
+        viewHolder.updateView(a.getAngka() + "",a.getTanda(),res);
         return  view;
 
     }
@@ -79,7 +83,7 @@ public class AdapterList extends BaseAdapter {
 
     private class ViewHolder implements View.OnClickListener {
         //        insert all your view element here
-        protected TextView textViewa;
+        protected TextView textViewa,res;
         protected TextView textViewb;
         protected ImageView sampah;
         protected int index;
@@ -91,13 +95,17 @@ public class AdapterList extends BaseAdapter {
             this.index=i;
             this.pres=fl;
             this.sampah.setOnClickListener(this);
+            this.res=view.findViewById(R.id.list_res);
         }
 
         //        update all your list here
-        public void updateView(String angka, String kode){
+        public void updateView(String angka, String kode,int res){
             this.textViewa.setText(angka);
             this.textViewb.setText(kode);
+            this.res.setText(res+"");
         }
+
+        public void setIndex(int i){this.index=i;}
 
 
         @Override
