@@ -23,7 +23,7 @@ import java.util.ArrayList;
 
 public class MainFragment extends Fragment implements View.OnClickListener {
     protected Button btnAdd, btnRes, btnClear, btnSave ,btnsubmit;
-
+    protected Button floatbtn;
     public FragmentListener listener;
     public Presenter presenter;
     protected TextView output;
@@ -52,6 +52,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         this.output= view.findViewById(R.id.label);
         this.btnRes=view.findViewById(R.id.btn_Res);
         this.btnSave=view.findViewById(R.id.btn_Save);
+        this.floatbtn=view.findViewById(R.id.floatbutton);
+        this.floatbtn.setOnClickListener(this);
         this.btnRes.setOnClickListener(this);
         this.btnClear.setOnClickListener(this);
         this.btnSave.setOnClickListener(this);
@@ -70,6 +72,11 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         if(view.getId()==this.btnAdd.getId()) {
+
+
+            this.listener.changePage(1);
+        }
+        if(view.getId()==this.floatbtn.getId()) {
 
 
             this.listener.changePage(1);

@@ -43,38 +43,55 @@
         android:orientation="horizontal"
         android:layout_alignParentBottom="true">
         <Button
+            android:layout_marginRight="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Add"
             android:id="@+id/btn_Add"
             android:layout_alignParentBottom="true"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorBisque"/>
+            android:backgroundTint="@color/colorBisque"
+            android:textColor="@color/colorPrimaryDark"/>
         <Button
+            android:layout_marginRight="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Result"
             android:id="@+id/btn_Res"
             android:layout_alignParentBottom="true"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorBisque"/>
+            android:backgroundTint="@color/colorBisque"
+            android:textColor="@color/colorPrimaryDark"/>
         <Button
+            android:layout_marginRight="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Clear"
             android:id="@+id/btn_Clear"
             android:layout_alignParentBottom="true"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorBisque"/>
+            android:backgroundTint="@color/colorBisque"
+            android:textColor="@color/colorPrimaryDark"/>
         <Button
+            android:layout_marginRight="5dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Save"
             android:id="@+id/btn_Save"
             android:layout_alignParentBottom="true"
             android:layout_weight="1"
-            android:backgroundTint="@color/colorBisque"/>
+            android:backgroundTint="@color/colorBisque"
+            android:textColor="@color/colorPrimaryDark"/>
 
     </LinearLayout>
-
+    <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+        android:id="@+id/floatbutton"
+        style="@style/Widget.MaterialComponents.ExtendedFloatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="600dp"
+        android:layout_marginLeft="250dp"
+        android:text="Add"
+        android:contentDescription="@string/appbar_scrolling_view_behavior"
+        app:icon="@android:drawable/ic_input_add"/>
 </RelativeLayout>
