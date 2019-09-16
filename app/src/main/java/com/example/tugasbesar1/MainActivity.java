@@ -16,6 +16,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
     public MainFragment mainFragment;
     protected AddFragment addFragment;
     protected ResultFragment resultFragment;
+    protected HistoryFragment historyFragment;
     private Toolbar toolbar;
     private double res;
    protected DrawerLayout drawer;
@@ -29,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         this.addFragment=AddFragment.newInstance("");
         this.resultFragment=ResultFragment.newInstance("");
         this.fragmentManager=this.getSupportFragmentManager();
+        this.historyFragment=HistoryFragment.newInstance("");
         this.toolbar = this.findViewById(R.id.toolbar);
         this.setSupportActionBar(this.toolbar);
         this.drawer= this.findViewById(R.id.drawer_layout);
@@ -39,8 +41,10 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         ft.add(R.id.fragment_container , this.mainFragment);
         ft.add(R.id.fragment_container,this.addFragment);
         ft.add(R.id.fragment_container,this.resultFragment);
+        ft.add(R.id.fragment_container,this.historyFragment);
         ft.hide(this.addFragment);
         ft.hide(this.resultFragment);
+        ft.hide(this.historyFragment);
         ft.commit();
 
     }
@@ -51,14 +55,20 @@ public class MainActivity extends AppCompatActivity implements FragmentListener,
         if (page==1) {
             ft.show(addFragment);
             ft.hide(mainFragment);
+            ft.hide(historyFragment);
         }else if(page==2){
             ft.hide(addFragment);
             ft.show(mainFragment);
+            ft.hide(historyFragment);
         }else if(page==3){
             this.resultFragment=ResultFragment.newInstance(res+"");
             this.resultFragment.show(this.getSupportFragmentManager(),"dialog");
         }else if(page==4){
             this.resultFragment.dismiss();
+        }else if(page==5){
+            ft.hide(addFragment);
+            ft.hide(mainFragment);
+            ft.show(historyFragment);
         }
         ft.commit() ;
         this.drawer.closeDrawers();

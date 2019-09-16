@@ -42,7 +42,7 @@ public class LeftDrawer extends Fragment implements View.OnClickListener{
             this.fragmentListener.changePage(2);
         }
         else if (view.getId() == this.page_2.getId()){
-            this.fragmentListener.changePage(1);
+            this.fragmentListener.changePage(5);
         }
         else if(view.getId() == this.exit.getId()){
             this.fragmentListener.closeApplication();
